@@ -93,7 +93,7 @@ def construct_ecdf_lin(train_data: np.array, upper_bound: float = 1 - 1e-5, lowe
     # Implement the upper and lower bound the ecdf
     def bounded_ecdf(x):
         if np.isnan(x):  # Map nan input to nan
-            result = np.NaN
+            result = np.nan
         else:  # Apply the upper and lower bound
             result = max(min(interp_ecdf(x), upper_bound), lower_bound)
 

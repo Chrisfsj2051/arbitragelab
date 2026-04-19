@@ -31,17 +31,17 @@ exclude = ["docs", "tests"]
 
 [tool.poetry.dependencies]
 python = "^3.12"
-POT = "0.9.0"
+POT = ">=0.9.4"
 arch = ">=7.0.0"
 werkzeug = "2.2.3"
 yahoo-fin = "0.8.9.1"
 yfinance = "0.2.37"
 cython = "0.29.28"
-dash = "2.10.2"
+dash = ">=2.18.0"
 mpmath = "1.2.1"
 pandas = ">=2.3.2,<3.0"
 pmdarima = ">=2.1.0"
-pyvinecopulib = "0.6.5"
+pyvinecopulib = ">=0.6.8,<0.7.0"
 requests_html = "0.10.0"
 pyzmq = "26.0.0"
 seaborn = "0.12.2"
@@ -49,7 +49,7 @@ seaborn = "0.12.2"
 statsmodels = { version = ">=0.14.4" }
 lxml = { version = "^4.9.1" }
 protobuf = { version = ">=5.28.0" }
-networkx = { version = ">=2.2,<2.6" }
+networkx = { version = ">=3.0" }
 jupyter-dash = { version = ">=0.2.0,<1.0.0" }
 
 numpy = ">=1.26.4"

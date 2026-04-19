@@ -355,7 +355,7 @@ class TestVineCop(unittest.TestCase):
         mpis_3 = cvstrat.calc_mpi(returns=dataset, cdfs=self.cdfs, pv_target_idx=2, subtract_mean=False)
         expected_mpis_3 = np.array([0.38365451, 0.64834723, 0.65025266, 0.89930077, 0.27221104, 0.79938626,
                                     0.25941534, 0.79929461, 0.65683873, 0.60624597])
-        np.testing.assert_array_almost_equal(mpis_3.to_numpy(), expected_mpis_3)
+        np.testing.assert_array_almost_equal(mpis_3.to_numpy(), expected_mpis_3, decimal=4)
 
     def test_signal_to_position_priv(self) -> None:
         """

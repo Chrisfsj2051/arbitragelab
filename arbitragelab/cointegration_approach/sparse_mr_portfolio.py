@@ -218,7 +218,7 @@ class SparseMeanReversionPortfolio:
         # Start greedy search
         for _ in range(cardinality):
             # Record the maximum value of the target function of the generalized eigenvalue problem
-            max_gen_eig_ratio = np.NINF
+            max_gen_eig_ratio = -np.inf
 
             # Start greedy search
             for support in list(candidates):
@@ -461,12 +461,12 @@ class SparseMeanReversionPortfolio:
 
             # Retrieve the best alpha
             if best_alpha_index in [0, len(non_zeros)]:
-                best_alpha = np.Inf
+                best_alpha = np.inf
             else:
                 best_alpha = alphas[::-1][best_alpha_index]
 
         else:
-            best_alpha = np.Inf
+            best_alpha = np.inf
             # Fit the normal LASSO model
             for alpha in alphas:
                 lasso_model = Lasso(alpha=alpha, max_iter=max_iter)

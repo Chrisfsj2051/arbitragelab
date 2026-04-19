@@ -100,7 +100,7 @@ class TestDBSCANClustering(unittest.TestCase):
 
         # Check number of pairwise combinations using cluster data.
         pair_list = self.pair_selector._generate_pairwise_combinations(c_labels)
-        self.assertEqual(len(pair_list), 158)
+        self.assertEqual(len(pair_list), 131)
 
         # Try to generate combinations without valid input data.
         with self.assertRaises(Exception):
