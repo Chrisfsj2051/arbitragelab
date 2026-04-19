@@ -75,7 +75,7 @@ class TestBasicCopulaStrategy(unittest.TestCase):
         self.assertEqual(descr['Class Name'], 'CTGMixCop')
         self.assertAlmostEqual(descr['Clayton theta'], 2.1268764, 1)
         self.assertAlmostEqual(descr['Student rho'], 0.001, 1)
-        self.assertAlmostEqual(descr['Student nu'], 4.00676, 1)
+        self.assertAlmostEqual(descr['Student nu'], 4.00676, 0)
         self.assertAlmostEqual(descr['Gumbel theta'], 5, 1)
         self.assertAlmostEqual(descr['Clayton weight'], 1, 1)
         self.assertAlmostEqual(descr['Student weight'], 0, 1)

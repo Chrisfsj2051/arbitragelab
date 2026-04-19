@@ -61,12 +61,12 @@ class TestPairsSelector(unittest.TestCase):
 
         # Initiate data and selctor
         PS = pairs_selection.PairsSelector()
-        toy_data = {'A': [1, 2, 3, 4, np.NaN, 6],
-                    'B': [np.NaN, 2, 3, 4, 5, 6],
-                    'C': [1, 2, 3, 4, 5, np.NaN],
-                    'D': [np.NaN, np.NaN, 3, 4, 5, 6],
-                    'E': [1, 2, 3, 4, np.NaN, np.NaN],
-                    'F': [1, 2, np.NaN, np.NaN, 5, 6]}
+        toy_data = {'A': [1, 2, 3, 4, np.nan, 6],
+                    'B': [np.nan, 2, 3, 4, 5, 6],
+                    'C': [1, 2, 3, 4, 5, np.nan],
+                    'D': [np.nan, np.nan, 3, 4, 5, 6],
+                    'E': [1, 2, 3, 4, np.nan, np.nan],
+                    'F': [1, 2, np.nan, np.nan, 5, 6]}
         toy_df = pd.DataFrame(data=toy_data, dtype=float)
 
         # Fill NaN
@@ -76,17 +76,17 @@ class TestPairsSelector(unittest.TestCase):
 
         # Expected data for forward fill
         ff_expect_data = {'A': [1, 2, 3, 4, 4, 6],
-                          'B': [np.NaN, 2, 3, 4, 5, 6],
+                          'B': [np.nan, 2, 3, 4, 5, 6],
                           'C': [1, 2, 3, 4, 5, 5],
-                          'D': [np.NaN, np.NaN, 3, 4, 5, 6],
+                          'D': [np.nan, np.nan, 3, 4, 5, 6],
                           'E': [1, 2, 3, 4, 4, 4],
                           'F': [1, 2, 2, 2, 5, 6]}
 
         # Expected data for linear interp
         li_expect_data = {'A': [1, 2, 3, 4, 5, 6],
-                          'B': [np.NaN, 2, 3, 4, 5, 6],
+                          'B': [np.nan, 2, 3, 4, 5, 6],
                           'C': [1, 2, 3, 4, 5, 5],
-                          'D': [np.NaN, np.NaN, 3, 4, 5, 6],
+                          'D': [np.nan, np.nan, 3, 4, 5, 6],
                           'E': [1, 2, 3, 4, 4, 4],
                           'F': [1, 2, 3, 4, 5, 6]}
 
