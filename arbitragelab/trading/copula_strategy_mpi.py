@@ -361,6 +361,10 @@ class MPICopulaTradingRule:
         short_based_on_1 = (flag_1 >= upper_open_threshold)  # and (pre_position == 0)
         short_based_on_2 = (flag_2 <= lower_open_threshold)  # and (pre_position == 0)
 
+        # Triggers
+        long_trigger = False
+        short_trigger = False
+
         # Forming triggers, OR open logic
         if open_rule == 'or':
             long_trigger = (long_based_on_1 or long_based_on_2)

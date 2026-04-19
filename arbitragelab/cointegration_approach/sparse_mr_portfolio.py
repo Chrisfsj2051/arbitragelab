@@ -219,6 +219,7 @@ class SparseMeanReversionPortfolio:
         for _ in range(cardinality):
             # Record the maximum value of the target function of the generalized eigenvalue problem
             max_gen_eig_ratio = -np.inf
+            cur_support = None
 
             # Start greedy search
             for support in list(candidates):
@@ -257,8 +258,9 @@ class SparseMeanReversionPortfolio:
                     selected_weights = weight
 
             # Now the best asset candidate have been included in the portfolio, remove it from the candidate list
-            selected.append(cur_support)
-            candidates.remove(cur_support)
+            if cur_support is not None:
+                selected.append(cur_support)
+                candidates.remove(cur_support)
 
         return np.around(selected_weights, threshold)
 
