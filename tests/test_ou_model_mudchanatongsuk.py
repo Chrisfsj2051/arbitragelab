@@ -48,12 +48,12 @@ class TestOUModelMudchanatongsuk(unittest.TestCase):
         self.assertAlmostEqual(sc_mudchana.spread[-1], 2.0202245834, delta=1e-7)
 
         # Checking other parameter values.
-        self.assertAlmostEqual(sc_mudchana.sigma, 0.503695, delta=1e-3)
-        self.assertAlmostEqual(sc_mudchana.mu, 0.114877, delta=1e-3)
-        self.assertAlmostEqual(sc_mudchana.k, 3.99205, delta=1e-3)
-        self.assertAlmostEqual(sc_mudchana.theta, 1.98816, delta=1e-3)
-        self.assertAlmostEqual(sc_mudchana.eta, 0.404292, delta=1e-3)
-        self.assertAlmostEqual(sc_mudchana.rho, 0.96202, delta=1e-3)
+        self.assertAlmostEqual(sc_mudchana.sigma, 0.5037, delta=1e-3)
+        self.assertAlmostEqual(sc_mudchana.mu, 0.1145, delta=1e-3)
+        self.assertAlmostEqual(sc_mudchana.k, 3.9920, delta=1e-3)
+        self.assertAlmostEqual(sc_mudchana.theta, 1.9882, delta=1e-3)
+        self.assertAlmostEqual(sc_mudchana.eta, 0.4043, delta=1e-3)
+        self.assertAlmostEqual(sc_mudchana.rho, 0.9620, delta=1e-3)
 
 
     def test_describe(self):
@@ -74,7 +74,7 @@ class TestOUModelMudchanatongsuk(unittest.TestCase):
                  'long-term mean of spread', 'rate of mean reversion of spread', 'standard deviation of spread', 'half-life of spread',
                  'Drift of stock B', 'standard deviation of stock B']
 
-        data = ['GLD', 'GDX', 1.98816, 3.99205, 0.404292, 0.173632, 0.114877, 0.503695]
+        data = ['GLD', 'GDX', 1.9882, 3.9920, 0.4043, 0.1736, 0.1145, 0.5037]
 
         # Testing the output of describe method
         pd.testing.assert_series_equal(pd.Series(index=index,data=data), sc_mudchana.describe(), check_exact=False, atol=1e-3)

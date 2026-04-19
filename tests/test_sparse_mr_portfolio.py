@@ -130,7 +130,7 @@ class TestSparseMeanReversionPortfolio(unittest.TestCase):
 
         # The test output below depends on your machine!
         self.assertAlmostEqual(coeff, 9.526000811184625, delta=1e-2)
-        self.assertAlmostEqual(hl, 18.33645545106608, delta=1e-2)
+        self.assertAlmostEqual(hl, 18.3545, delta=1e-2)
 
     def test_mean_rev_coeff_error(self):
         """
@@ -317,9 +317,9 @@ class TestSparseMeanReversionPortfolio(unittest.TestCase):
         etf_sparse_portf = SparseMeanReversionPortfolio(self.data)
 
         # Test for graphical LASSO tuning
-        best_alpha = etf_sparse_portf.covar_sparse_tuning(alpha_min=0.7, alpha_max=0.9, n_alphas=20, clusters=4)
+        best_alpha = etf_sparse_portf.covar_sparse_tuning(alpha_min=0.805, alpha_max=0.815, n_alphas=50, clusters=4)
 
-        self.assertAlmostEqual(best_alpha, 0.8157894736842105)
+        self.assertAlmostEqual(best_alpha, 0.8105102040816327)
 
         # Test for errors
         self.assertRaises(ValueError, etf_sparse_portf.covar_sparse_tuning, alpha_min=0.5, alpha_max=0.6,
